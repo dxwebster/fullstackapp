@@ -12,8 +12,7 @@
 </p>
 
 <p align="center">
-| - | - | - | - |
-| <img width="180" alt="image" src="readme/01.png">| <img width="180" alt="image" src="readme/02.png"> | <img width="180" alt="image" src="readme/03.png"> | <img width="180" alt="image" src="readme/04.png"> |
+ <img width="180" alt="image" src="readme/01.png"> <img width="180" alt="image" src="readme/02.png">  <img width="180" alt="image" src="readme/03.png">  <img width="180" alt="image" src="readme/04.png">
 </p>
 
 ## :sparkles: Features ##
