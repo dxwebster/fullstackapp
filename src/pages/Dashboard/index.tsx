@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { useNavigation } from '@react-navigation/native';
 import { Text } from 'react-native';
 import Button from '../../components/Button';
 import api from '../../services/api';
@@ -33,7 +32,6 @@ export interface Provider {
 const Dashboard: React.FC = () => {
   const { signOut, user } = useAuth();
   const [showBox, setShowBox] = useState(false);
-  const navigation = useNavigation();
   const [registeredUsers, setRegisteredUsers] = useState<Provider[]>([]);
 
   useEffect(() => {
@@ -42,21 +40,11 @@ const Dashboard: React.FC = () => {
     });
   }, []);
 
-  const handleSelectProvider = useCallback(
-    (providerId: string) => {
-      navigation.navigate('UserInfo', { providerId });
-    },
-    [navigation],
-  );
-
   return (
     <Container>
       <Header>
         <HeaderTitle>
-          Bem vindo,{' '}
-          <UserName onPress={() => navigation.navigate('Profile')}>
-            {user.name}
-          </UserName>
+          Bem vindo, <UserName>{user.name}</UserName>
           {'\n'}
           <ExitButton onPress={() => setShowBox(true)}>Sair</ExitButton>
         </HeaderTitle>
@@ -87,9 +75,7 @@ const Dashboard: React.FC = () => {
           <ProvidersListTitle>Usuários Cadastrados</ProvidersListTitle>
         }
         renderItem={({ item: registeredUser }) => (
-          <ProviderContainer
-            onPress={() => handleSelectProvider(registeredUser.id)}
-          >
+          <ProviderContainer>
             <ProviderInfo>
               <ProviderName>{registeredUser.name}</ProviderName>
               <ProviderMetaText>{registeredUser.email}</ProviderMetaText>

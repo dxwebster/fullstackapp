@@ -17,12 +17,6 @@
       "email": "joaodasilva@gmail.com",
       "password": "123456",
       "id": 4
-    },
-    {
-      "name": "Roberta",
-      "email": "roberta@gmail.com",
-      "password": "456123",
-      "id": 5
     }
   ]
 }
