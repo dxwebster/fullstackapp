@@ -34,7 +34,7 @@ const Dashboard: React.FC = () => {
   const [providers, setProviders] = useState<Provider[]>([]);
 
   useEffect(() => {
-    api.get('providers').then((response) => {
+    api.get('users').then((response) => {
       setProviders(response.data);
     });
   }, []);
@@ -74,11 +74,11 @@ const Dashboard: React.FC = () => {
             <ProviderInfo>
               <ProviderName>{provider.name}</ProviderName>
               <ProviderMeta>
-                <Icon name="calendar" size={14} color="#ff9000" />
+                <Icon name="calendar" size={14} color="#44c3c3" />
                 <ProviderMetaText>Segunda à sexta</ProviderMetaText>
               </ProviderMeta>
               <ProviderMeta>
-                <Icon name="clock" size={14} color="#ff9000" />
+                <Icon name="clock" size={14} color="#44c3c3" />
                 <ProviderMetaText>8h às 18h</ProviderMetaText>
               </ProviderMeta>
             </ProviderInfo>

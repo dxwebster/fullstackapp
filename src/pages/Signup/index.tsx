@@ -9,15 +9,14 @@ import {
   Alert,
 } from 'react-native';
 
-import api from '../../services/api';
-
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
 
 import * as Yup from 'yup';
-import getValidationErrors from '../../utils/getValidationErrors';
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
+import getValidationErrors from '../../utils/getValidationErrors';
+import api from '../../services/api';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -39,12 +38,10 @@ const SignUp: React.FC = () => {
   const emailInputRef = useRef<TextInput>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  // callback para lidar com submit, recebe como parâmetro os dados do form
-  //  Aqui vamos colocar a validação do form
   const handleSignUp = useCallback(
     async (data: SignUpFormData) => {
       try {
-        formRef.current?.setErrors({}); // limpa os erros do input
+        formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
           name: Yup.string().required('Nome obrigatório'),
@@ -60,28 +57,26 @@ const SignUp: React.FC = () => {
 
         Alert.alert(
           'Cadastro realizado  com sucesso!',
-          'Você já pode fazer login na aplicação.'
+          'Você já pode fazer login na aplicação.',
         );
 
-        // Conexão com api
         await api.post('/users', data);
         navigation.goBack();
       } catch (err) {
-        // se o erro for gerado pelo Yupi, retorna o erro
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
           formRef.current?.setErrors(errors);
 
           return;
         }
-        // senão, vai disparar um alert do react-native
+
         Alert.alert(
           'Erro no cadastro',
-          'Ocorreu um erro ao fazer cadastro, tente novamente'
+          'Ocorreu um erro ao fazer cadastro, tente novamente',
         );
       }
     },
-    [navigation]
+    [navigation],
   );
 
   return (
@@ -96,8 +91,6 @@ const SignUp: React.FC = () => {
           keyboardShouldPersistTaps="handled"
         >
           <Container>
-            <Image source={logoImg} />
-
             <View>
               <Title>Crie sua conta</Title>
             </View>
@@ -147,7 +140,7 @@ const SignUp: React.FC = () => {
 
       <BackToSignIn onPress={() => navigation.goBack()}>
         <Icon name="arrow-left" size={20} color="#fff" />
-        <BackToSignInText>Voltar para logon</BackToSignInText>
+        <BackToSignInText>Voltar para login</BackToSignInText>
       </BackToSignIn>
     </>
   );

@@ -38,16 +38,13 @@ interface SignInFormData {
 }
 
 const SignIn: React.FC = () => {
-  // Referências para acessar um objeto e manipulá-lo
-  const formRef = useRef<FormHandles>(null); // referência do formulário
-  const passwordInputRef = useRef<TextInput>(null); // referência do input de password
+  const formRef = useRef<FormHandles>(null);
+  const passwordInputRef = useRef<TextInput>(null);
 
-  // Navegação
   const navigation = useNavigation();
 
   const { signIn } = useAuth();
 
-  // Função que dispara no submit
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {
       try {
@@ -69,14 +66,12 @@ const SignIn: React.FC = () => {
           password: data.password,
         });
       } catch (err) {
-        // se o erro for gerado pelo Yupi, retorna o erro
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
           formRef.current?.setErrors(errors);
 
           return;
         }
-        // senão, vai disparar um alert do react-native
         Alert.alert(
           'Erro na autenticação',
           'Ocorreu um  erro ao fazer login, cheque as credenciais',
@@ -86,7 +81,6 @@ const SignIn: React.FC = () => {
     [signIn],
   );
 
-  // Retorno da página
   return (
     <>
       <KeyboardAvoidingView
@@ -99,10 +93,8 @@ const SignIn: React.FC = () => {
           keyboardShouldPersistTaps="handled"
         >
           <Container>
-            <Image source={logoImg} />
-
             <View>
-              <Title>Faça seu logon</Title>
+              <Title>Faça seu login</Title>
             </View>
 
             <Form ref={formRef} onSubmit={handleSignIn}>
@@ -148,7 +140,7 @@ const SignIn: React.FC = () => {
       </KeyboardAvoidingView>
 
       <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
-        <Icon name="log-in" size={20} color="#ff9000" />
+        <Icon name="log-in" size={20} color="#44c3c3" />
         <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
       </CreateAccountButton>
     </>
