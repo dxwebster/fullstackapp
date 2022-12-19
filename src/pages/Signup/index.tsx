@@ -57,7 +57,7 @@ const SignUp = () => {
           'Você já pode fazer login na aplicação.',
         );
 
-        await api.post('/users', data);
+        await api.post('users', data);
         navigation.goBack();
       } catch (err) {
         if (err instanceof Yup.ValidationError) {

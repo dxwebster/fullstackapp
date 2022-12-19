@@ -10,7 +10,6 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { Alert } from 'react-native';
 import { FULLSTACK_APP_TOKEN, FULLSTACK_APP_USER } from '../constants';
 import api from '../services/api';
-import { createToken } from '../services/jwt';
 
 interface User {
   id: string;
@@ -75,16 +74,16 @@ const AuthProvider: React.FC = ({ children }) => {
 
     await api.post('sessions', { email, password });
 
-    // const token = createToken({ email, password });
+    const token = 'token_value';
 
-    // await AsyncStorage.multiSet([
-    //   [FULLSTACK_APP_TOKEN, token],
-    //   [FULLSTACK_APP_USER, JSON.stringify(user)],
-    // ]);
+    await AsyncStorage.multiSet([
+      [FULLSTACK_APP_TOKEN, token],
+      [FULLSTACK_APP_USER, JSON.stringify(user)],
+    ]);
 
-    // api.defaults.headers.authorization = `Bearer ${token[1]}`;
+    api.defaults.headers.authorization = `Bearer ${token[1]}`;
 
-    // setData({ token, user });
+    setData({ token, user });
   }, []);
 
   const signOut = useCallback(async () => {
