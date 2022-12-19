@@ -4,19 +4,23 @@
 
 <h1 align="center">fullstackapp</h1>
 
+
+<p align="center">
+Trabalho final da disciplina Mobile Development do MBA Fullstack develop da Impacta.
+</p>
+
+<h4 align="center">
+Desenvolvido por Adriana Shikasho - matrícula 2200131
+</h4>
+
+<br>
+
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/dxwebster/fullstackapp?color=56BEB8">
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/dxwebster/fullstackapp?color=56BEB8">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/dxwebster/fullstackapp?color=56BEB8">
   <img alt="License" src="https://img.shields.io/github/license/dxwebster/fullstackapp?color=56BEB8">
 </p>
-
-## :sparkles: Sobre ##
-
-Trabalho final da disciplina Mobile Development do MBA Fullstack develop da Impacta.
-<br />
-
-**Desenvolvido por Adriana Shikasho - matrícula 2200131**
 
 
 <p align="center">
