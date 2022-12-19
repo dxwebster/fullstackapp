@@ -20,7 +20,8 @@ import {
   ProviderName,
   ProviderMetaText,
   ExitDialog,
-  MasktDialog,
+  MaskDialog,
+  ButtonsContainer,
 } from './styles';
 
 export interface Provider {
@@ -66,13 +67,17 @@ const Dashboard: React.FC = () => {
       </Header>
 
       {showBox && (
-        <MasktDialog>
+        <MaskDialog>
           <ExitDialog>
             <Text>Tem certeza que deseja sair?</Text>
-            <Button onPress={() => signOut()}>Sim</Button>
-            <Button onPress={() => setShowBox(false)}>Não</Button>
+            <ButtonsContainer>
+              <Button style={{ marginRight: 10 }} onPress={() => signOut()}>
+                Sim
+              </Button>
+              <Button onPress={() => setShowBox(false)}>Não</Button>
+            </ButtonsContainer>
           </ExitDialog>
-        </MasktDialog>
+        </MaskDialog>
       )}
 
       <ProvidersList

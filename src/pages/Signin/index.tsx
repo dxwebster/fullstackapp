@@ -28,6 +28,7 @@ import {
   CreateAccountButton,
   CreateAccountButtonText,
 } from './styles';
+import { ButtonsContainer } from '../Dashboard/styles';
 
 export interface SignInFormData {
   email: string;
@@ -122,18 +123,16 @@ const SignIn: React.FC = () => {
                 }}
               />
 
-              <Button
-                onPress={() => {
-                  formRef.current?.submitForm();
-                }}
-              >
-                Entrar
-              </Button>
+              <ButtonsContainer>
+                <Button
+                  onPress={() => {
+                    formRef.current?.submitForm();
+                  }}
+                >
+                  Entrar
+                </Button>
+              </ButtonsContainer>
             </Form>
-
-            <ForgotPassword>
-              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-            </ForgotPassword>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>

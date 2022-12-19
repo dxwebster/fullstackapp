@@ -91,13 +91,17 @@ export const ExitButton = styled.Text`
 
 export const ExitDialog = styled.View`
   width: 300px;
-  height: 300px;
   background-color: white;
   margin-bottom: 30px;
   font-size: 14px;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-export const MasktDialog = styled.View`
+export const MaskDialog = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -107,4 +111,11 @@ export const MasktDialog = styled.View`
   background-color: #333333a3;
   width: 100%;
   height: 100%;
+`;
+
+export const ButtonsContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 10px;
 `;

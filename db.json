@@ -29,6 +29,26 @@
       "email": "henrique@gmail.com",
       "password": "123456",
       "id": 2
+    },
+    {
+      "email": "adriana@gmail.com",
+      "password": "456456456",
+      "id": 3
+    },
+    {
+      "email": "adriana@gmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "email": "adriana@gmail.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "email": "adriana@gmail.com",
+      "password": "123456",
+      "id": 6
     }
   ]
 }
