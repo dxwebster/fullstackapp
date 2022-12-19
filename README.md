@@ -39,11 +39,10 @@ Desenvolvido por Adriana Shikasho - matrícula 2200131
 
 As seguintes ferramentas foram utilizadas neste projeto:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Node.js v16.16.0](https://nodejs.org/en/)
+- [React v16.11.0](https://pt-br.reactjs.org/)
+- [React Native v4.7.0](https://reactnative.dev/)
+- [TypeScript v3.8.3](https://www.typescriptlang.org/)
 
 
 ## :checkered_flag: Como rodar o projeto ##
