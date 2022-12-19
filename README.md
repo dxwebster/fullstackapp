@@ -14,7 +14,9 @@
 ## :sparkles: Sobre ##
 
 Trabalho final da disciplina Mobile Development do MBA Fullstack develop da Impacta.
-Desenvolvido por Adriana Shikasho - matrícula 2200131
+<br />
+
+**Desenvolvido por Adriana Shikasho - matrícula 2200131**
 
 
 <p align="center">
