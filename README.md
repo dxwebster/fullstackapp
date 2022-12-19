@@ -11,14 +11,16 @@
   <img alt="License" src="https://img.shields.io/github/license/dxwebster/fullstackapp?color=56BEB8">
 </p>
 
-<p align="center">
- <img width="180" alt="image" src="readme/01.png"> <img width="180" alt="image" src="readme/02.png">  <img width="180" alt="image" src="readme/03.png">  <img width="180" alt="image" src="readme/04.png">
-</p>
-
 ## :sparkles: Sobre ##
 
 Trabalho final da disciplina Mobile Development do MBA Fullstack develop da Impacta.
 Desenvolvido por Adriana Shikasho - matrícula 2200131
+
+
+<p align="center">
+ <img width="180" alt="image" src="readme/01.png"> <img width="180" alt="image" src="readme/02.png">  <img width="180" alt="image" src="readme/03.png">  <img width="180" alt="image" src="readme/04.png">
+</p>
+
 
 ## :sparkles: Features ##
 
