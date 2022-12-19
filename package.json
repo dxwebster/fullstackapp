@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "server": "json-server --watch db.json",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
@@ -19,6 +20,7 @@
     "@unform/mobile": "^2.1.0",
     "axios": "^0.19.2",
     "date-fns": "^2.14.0",
+    "json-server": "^0.17.1",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.1",
