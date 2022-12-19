@@ -9,9 +9,12 @@
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/dxwebster/fullstackapp?color=56BEB8">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/dxwebster/fullstackapp?color=56BEB8">
   <img alt="License" src="https://img.shields.io/github/license/dxwebster/fullstackapp?color=56BEB8">
-
 </p>
 
+<p align="center">
+| - | - | - | - |
+| <img width="180" alt="image" src="readme/01.png">| <img width="180" alt="image" src="readme/02.png"> | <img width="180" alt="image" src="readme/03.png"> | <img width="180" alt="image" src="readme/04.png"> |
+</p>
 
 ## :sparkles: Features ##
 
@@ -20,9 +23,9 @@
 :heavy_check_mark: Tela de Listagem de usuários cadastrados;
 :heavy_check_mark: Botão Sair com modal de confirmação para deslogar usuário;
 
-## :rocket: Technologies ##
+## :rocket: Tecnologias ##
 
-The following tools were used in this project:
+As seguintes ferramentas foram utilizadas neste projeto:
 
 - [Expo](https://expo.io/)
 - [Node.js](https://nodejs.org/en/)
@@ -31,7 +34,9 @@ The following tools were used in this project:
 - [TypeScript](https://www.typescriptlang.org/)
 
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Como rodar o projeto ##
+
+**Você precisa do Android Studio instalado e configurado**
 
 ```bash
 # Clone this project
@@ -46,7 +51,6 @@ $ yarn
 # Run the project
 $ yarn android
 
-# You need Android Studio installed and AVD device
 ```
 
 ## :memo: License ##
