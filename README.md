@@ -15,11 +15,16 @@
  <img width="180" alt="image" src="readme/01.png"> <img width="180" alt="image" src="readme/02.png">  <img width="180" alt="image" src="readme/03.png">  <img width="180" alt="image" src="readme/04.png">
 </p>
 
+## :sparkles: Sobre ##
+
+Trabalho final da disciplina Mobile Development do MBA Fullstack develop da Impacta.
+Desenvolvido por Adriana Shikasho - matrícula 2200131
+
 ## :sparkles: Features ##
 
 :heavy_check_mark: Tela de Cadastro de Usuário com nome, email e senha;\
 :heavy_check_mark: Tela de Login com validação de campos e autenticação de usuário;\
-:heavy_check_mark: Tela de Listagem de usuários cadastrados;
+:heavy_check_mark: Tela de Listagem de usuários cadastrados;\
 :heavy_check_mark: Botão Sair com modal de confirmação para deslogar usuário;
 
 ## :rocket: Tecnologias ##
