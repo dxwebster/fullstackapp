@@ -1,6 +1,5 @@
 import React, { useCallback, useRef } from 'react';
 import {
-  Image,
   View,
   ScrollView,
   KeyboardAvoidingView,
@@ -21,8 +20,6 @@ import api from '../../services/api';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import logoImg from '../../assets/logo.png';
-
 import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
 
 interface SignUpFormData {
@@ -31,7 +28,7 @@ interface SignUpFormData {
   passwor: string;
 }
 
-const SignUp: React.FC = () => {
+const SignUp = () => {
   const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
 

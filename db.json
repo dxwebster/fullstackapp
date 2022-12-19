@@ -1,4 +1,11 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "adriana",
+      "email": "adriana@gmail.com",
+      "password": "123456",
+      "id": 1
+    }
+  ],
   "sessions": []
 }
