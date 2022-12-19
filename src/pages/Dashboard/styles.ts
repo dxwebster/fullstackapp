@@ -68,7 +68,6 @@ export const ProviderAvatar = styled.Image`
 
 export const ProviderInfo = styled.View`
   flex: 1;
-  margin-left: 20px;
 `;
 
 export const ProviderName = styled.Text`
@@ -83,6 +82,29 @@ export const ProviderMeta = styled.View`
 `;
 
 export const ProviderMetaText = styled.Text`
-  margin-left: 8px;
   color: #999591;
+`;
+
+export const ExitButton = styled.Text`
+  font-size: 14px;
+`;
+
+export const ExitDialog = styled.View`
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  margin-bottom: 30px;
+  font-size: 14px;
+`;
+
+export const MasktDialog = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  z-index: 9999;
+  background-color: #333333a3;
+  width: 100%;
+  height: 100%;
 `;

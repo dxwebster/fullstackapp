@@ -1,8 +1,8 @@
+import { HeaderTitle } from '@react-navigation/stack';
 import React from 'react';
-import { View } from 'react-native';
 
 const Profile: React.FC = () => {
-  return <View />;
+  return <HeaderTitle>Profile</HeaderTitle>;
 };
 
 export default Profile;

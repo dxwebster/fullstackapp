@@ -87,6 +87,7 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signOut = useCallback(async () => {
+    console.log('aqui');
     await AsyncStorage.multiRemove([FULLSTACK_APP_USER, FULLSTACK_APP_TOKEN]);
 
     setData({} as AuthState);

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 
 import { useNavigation } from '@react-navigation/native';
 import { Text } from 'react-native';
+import Button from '../../components/Button';
 import api from '../../services/api';
 import { useAuth } from '../../hooks/auth';
 import {
@@ -15,33 +15,35 @@ import {
   ProvidersList,
   ProvidersListTitle,
   ProviderContainer,
-  ProviderAvatar,
+  ExitButton,
   ProviderInfo,
   ProviderName,
-  ProviderMeta,
   ProviderMetaText,
+  ExitDialog,
+  MasktDialog,
 } from './styles';
 
 export interface Provider {
   id: string;
   name: string;
-  avatar_url: string;
+  email: string;
 }
 
 const Dashboard: React.FC = () => {
   const { signOut, user } = useAuth();
+  const [showBox, setShowBox] = useState(false);
   const navigation = useNavigation();
-  const [providers, setProviders] = useState<Provider[]>([]);
+  const [registeredUsers, setRegisteredUsers] = useState<Provider[]>([]);
 
   useEffect(() => {
     api.get('users').then((response) => {
-      setProviders(response.data);
+      setRegisteredUsers(response.data);
     });
   }, []);
 
   const handleSelectProvider = useCallback(
     (providerId: string) => {
-      navigation.navigate('AppointmentDatePicker', { providerId });
+      navigation.navigate('UserInfo', { providerId });
     },
     [navigation],
   );
@@ -50,37 +52,42 @@ const Dashboard: React.FC = () => {
     <Container>
       <Header>
         <HeaderTitle>
-          Bem vindo, {'\n'}
-          <UserName>{user.name}</UserName>
+          Bem vindo,{' '}
+          <UserName onPress={() => navigation.navigate('Profile')}>
+            {user.name}
+          </UserName>
           {'\n'}
-          <Text onPress={() => signOut()}>Sair</Text>
+          <ExitButton onPress={() => setShowBox(true)}>Sair</ExitButton>
         </HeaderTitle>
 
-        <ProfileButton onPress={() => navigation.navigate('Profile')}>
+        <ProfileButton>
           <UserAvatar source={{ uri: user.avatar_url }} />
         </ProfileButton>
       </Header>
 
-      <ProvidersList
-        data={providers}
-        keyExtractor={(provider) => provider.id}
-        ListHeaderComponent={
-          <ProvidersListTitle>Cabelereiros</ProvidersListTitle>
-        }
-        renderItem={({ item: provider }) => (
-          <ProviderContainer onPress={() => handleSelectProvider(provider.id)}>
-            <ProviderAvatar source={{ uri: provider.avatar_url }} />
+      {showBox && (
+        <MasktDialog>
+          <ExitDialog>
+            <Text>Tem certeza que deseja sair?</Text>
+            <Button onPress={() => signOut()}>Sim</Button>
+            <Button onPress={() => setShowBox(false)}>Não</Button>
+          </ExitDialog>
+        </MasktDialog>
+      )}
 
+      <ProvidersList
+        data={registeredUsers}
+        keyExtractor={(registeredUser) => registeredUser.id}
+        ListHeaderComponent={
+          <ProvidersListTitle>Usuários Cadastrados</ProvidersListTitle>
+        }
+        renderItem={({ item: registeredUser }) => (
+          <ProviderContainer
+            onPress={() => handleSelectProvider(registeredUser.id)}
+          >
             <ProviderInfo>
-              <ProviderName>{provider.name}</ProviderName>
-              <ProviderMeta>
-                <Icon name="calendar" size={14} color="#44c3c3" />
-                <ProviderMetaText>Segunda à sexta</ProviderMetaText>
-              </ProviderMeta>
-              <ProviderMeta>
-                <Icon name="clock" size={14} color="#44c3c3" />
-                <ProviderMetaText>8h às 18h</ProviderMetaText>
-              </ProviderMeta>
+              <ProviderName>{registeredUser.name}</ProviderName>
+              <ProviderMetaText>{registeredUser.email}</ProviderMetaText>
             </ProviderInfo>
           </ProviderContainer>
         )}
