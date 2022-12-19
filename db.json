@@ -1,54 +1,28 @@
 {
   "users": [
     {
-      "name": "adriana",
+      "name": "Adriana",
       "email": "adriana@gmail.com",
       "password": "123456",
       "id": 1
     },
     {
-      "name": "henrique",
+      "name": "Henrique",
       "email": "henrique@gmail.com",
       "password": "123456",
       "id": 2
     },
     {
-      "name": "adri",
-      "email": "adri@gmail.com",
-      "password": "123456",
-      "id": 3
-    }
-  ],
-  "sessions": [
-    {
-      "email": "adri@gmail.com",
-      "password": "123456",
-      "id": 1
-    },
-    {
-      "email": "henrique@gmail.com",
-      "password": "123456",
-      "id": 2
-    },
-    {
-      "email": "adriana@gmail.com",
-      "password": "456456456",
-      "id": 3
-    },
-    {
-      "email": "adriana@gmail.com",
+      "name": "Joao",
+      "email": "joaodasilva@gmail.com",
       "password": "123456",
       "id": 4
     },
     {
-      "email": "adriana@gmail.com",
-      "password": "123456",
+      "name": "Roberta",
+      "email": "roberta@gmail.com",
+      "password": "456123",
       "id": 5
-    },
-    {
-      "email": "adriana@gmail.com",
-      "password": "123456",
-      "id": 6
     }
   ]
 }

@@ -72,8 +72,6 @@ const AuthProvider: React.FC = ({ children }) => {
       Alert.alert('Ocorreu um  erro ao fazer login, cheque as credenciais');
     }
 
-    await api.post('sessions', { email, password });
-
     const token = 'token_value';
 
     await AsyncStorage.multiSet([

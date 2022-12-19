@@ -21,6 +21,7 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
+import { ButtonsContainer } from '../Dashboard/styles';
 
 interface SignUpFormData {
   name: string;
@@ -126,10 +127,11 @@ const SignUp = () => {
                 returnKeyType="send"
                 onSubmitEditing={() => formRef.current?.submitForm()}
               />
-
-              <Button onPress={() => formRef.current?.submitForm()}>
-                Criar
-              </Button>
+              <ButtonsContainer>
+                <Button onPress={() => formRef.current?.submitForm()}>
+                  Criar
+                </Button>
+              </ButtonsContainer>
             </Form>
           </Container>
         </ScrollView>
