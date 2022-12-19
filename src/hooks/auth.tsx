@@ -6,7 +6,11 @@ import React, {
   useEffect,
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
+
+import { Alert } from 'react-native';
+import { FULLSTACK_APP_TOKEN, FULLSTACK_APP_USER } from '../constants';
 import api from '../services/api';
+import { createToken } from '../services/jwt';
 
 interface User {
   id: string;
@@ -41,8 +45,8 @@ const AuthProvider: React.FC = ({ children }) => {
   useEffect(() => {
     async function loadStoragedData(): Promise<void> {
       const [token, user] = await AsyncStorage.multiGet([
-        '@GoBarber:token',
-        '@GoBarber:user',
+        FULLSTACK_APP_TOKEN,
+        FULLSTACK_APP_USER,
       ]);
 
       if (token[1] && user[1]) {
@@ -58,25 +62,33 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post('sessions', {
-      email,
-      password,
-    });
+    const { data: users } = await api.get('users');
 
-    const { token, user } = response.data;
+    const [user] = users.filter(
+      (item: SignInCredentials) =>
+        item.email === email && item.password === password,
+    );
 
-    await AsyncStorage.multiSet([
-      ['@GoBarber:token', token],
-      ['@GoBarber:user', JSON.stringify(user)],
-    ]);
+    if (!user) {
+      Alert.alert('Ocorreu um  erro ao fazer login, cheque as credenciais');
+    }
 
-    api.defaults.headers.authorization = `Bearer ${token[1]}`;
+    await api.post('sessions', { email, password });
 
-    setData({ token, user });
+    // const token = createToken({ email, password });
+
+    // await AsyncStorage.multiSet([
+    //   [FULLSTACK_APP_TOKEN, token],
+    //   [FULLSTACK_APP_USER, JSON.stringify(user)],
+    // ]);
+
+    // api.defaults.headers.authorization = `Bearer ${token[1]}`;
+
+    // setData({ token, user });
   }, []);
 
   const signOut = useCallback(async () => {
-    await AsyncStorage.multiRemove(['@GoBarber:user', '@GoBarber:token']);
+    await AsyncStorage.multiRemove([FULLSTACK_APP_USER, FULLSTACK_APP_TOKEN]);
 
     setData({} as AuthState);
   }, []);
